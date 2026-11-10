@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: marathon-plan-imperial
+expected_outcome: |
+  A marathon plan in miles built from the saved Strava data: about 33 mi/week now (duplicate uploads not counted),
+  paces from the 1:47:30 half six weeks ago, an honest verdict on 3:40, long runs that grow gradually from 14 miles,
+  18 or 19 weeks ending on race day with a taper.
+context:
+  scaffold_script: place-files.sh

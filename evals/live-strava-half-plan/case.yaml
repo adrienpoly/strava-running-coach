@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: live-strava-half-plan
+expected_outcome: |
+  Needs a live Strava connector, so it is not part of the offline benchmark. The reply reads the runner's real log
+  before asking anything, shows the picture it found, judges the goal against the last race, starts with recovery, and
+  ends on race week.

@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: return-from-break-10k
+expected_outcome: |
+  A plan in French and in kilometres that treats the runner as returning from a break: about 40 km/week before,
+  five weeks with no running, three short runs since. It restarts low and easy, says the sub-50 goal is uncertain and that
+  the pace references predate the injury, gives a rule for calf pain, and covers 8 weeks ending on 26 July.
+context:
+  scaffold_script: place-files.sh

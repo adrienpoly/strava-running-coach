@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: checkin-after-illness
+expected_outcome: |
+  A short check-in: plan versus reality with numbers (weeks 1 and 2 done, week 3 lost), an easy week now with no
+  hard session and no catching up, a following week that respects the long-run ceiling instead of the original week 5,
+  the race date kept, and what to do if symptoms return.
+context:
+  scaffold_script: place-files.sh
