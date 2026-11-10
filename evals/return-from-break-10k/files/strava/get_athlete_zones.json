@@ -1,0 +1,55 @@
+{
+ "heart_rate_zones": [
+  {
+   "min": 0,
+   "max": 118
+  },
+  {
+   "min": 119,
+   "max": 147
+  },
+  {
+   "min": 148,
+   "max": 162
+  },
+  {
+   "min": 163,
+   "max": 177
+  },
+  {
+   "min": 178
+  }
+ ],
+ "heart_rate_zone_source": "MaxHeartRate",
+ "run_zones": [
+  {
+   "min": 0,
+   "max": 2.6
+  },
+  {
+   "min": 2.6,
+   "max": 3.0
+  },
+  {
+   "min": 3.0,
+   "max": 3.34
+  },
+  {
+   "min": 3.34,
+   "max": 3.56
+  },
+  {
+   "min": 3.56,
+   "max": 3.79
+  },
+  {
+   "min": 3.79
+  }
+ ],
+ "run_zone_source": "RacePace",
+ "sample_race_pace": {
+  "best_effort_type": "Fastest10k",
+  "time": "49m 30s",
+  "is_estimated": false
+ }
+}

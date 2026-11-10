@@ -1,0 +1,14 @@
+{
+ "id": 92000001,
+ "first_name": "Tom",
+ "last_name": "Exemple",
+ "measurement_preference": "Metric",
+ "gender": "Man",
+ "weight": 74,
+ "weight_display": "74.0 kg",
+ "location": {
+  "city": "Lyon",
+  "state": "",
+  "country": "France"
+ }
+}

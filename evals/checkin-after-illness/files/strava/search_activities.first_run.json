@@ -1,0 +1,42 @@
+{
+ "activities": [
+  {
+   "id": "6900000001",
+   "name": "Couch to 5K week 1",
+   "sport_type": "Run",
+   "start_local": "2024-02-11T09:05:12",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 3000.0,
+    "moving_time": 1320,
+    "elapsed_time": 1325,
+    "elevation_gain": 18.0,
+    "avg_speed": 2.2727,
+    "max_speed": 2.955,
+    "relative_effort": 22,
+    "total_calories": 198,
+    "kudos_count": 3,
+    "achievement_count": 2,
+    "pr_count": 1
+   }
+  }
+ ],
+ "total_count": 371,
+ "offset": 0,
+ "has_next_page": true,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

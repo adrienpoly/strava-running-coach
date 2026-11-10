@@ -1,0 +1,103 @@
+{
+ "sport_type": "Run",
+ "has_heartrate": true,
+ "has_device_watts": false,
+ "average_heartrate": 156,
+ "max_heartrate": 172,
+ "calories": 607,
+ "segment_efforts": [],
+ "best_efforts": [],
+ "laps": [
+  {
+   "elapsed_time": 780,
+   "moving_time": 780,
+   "start_index": 0,
+   "end_index": 779,
+   "distance": 2000,
+   "elevation_gain": 10.0,
+   "avg_speed": 2.5641,
+   "max_speed": 3.077,
+   "avg_hr": 138,
+   "max_hr": 144,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 480,
+   "moving_time": 480,
+   "start_index": 780,
+   "end_index": 1259,
+   "distance": 1500,
+   "elevation_gain": 7.5,
+   "avg_speed": 3.125,
+   "max_speed": 3.75,
+   "avg_hr": 165,
+   "max_hr": 171,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 120,
+   "moving_time": 120,
+   "start_index": 1260,
+   "end_index": 1379,
+   "distance": 290,
+   "elevation_gain": 1.4,
+   "avg_speed": 2.4167,
+   "max_speed": 2.9,
+   "avg_hr": 150,
+   "max_hr": 156,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 480,
+   "moving_time": 480,
+   "start_index": 1380,
+   "end_index": 1859,
+   "distance": 1510,
+   "elevation_gain": 7.5,
+   "avg_speed": 3.1458,
+   "max_speed": 3.775,
+   "avg_hr": 167,
+   "max_hr": 173,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 120,
+   "moving_time": 120,
+   "start_index": 1860,
+   "end_index": 1979,
+   "distance": 285,
+   "elevation_gain": 1.4,
+   "avg_speed": 2.375,
+   "max_speed": 2.85,
+   "avg_hr": 152,
+   "max_hr": 158,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 480,
+   "moving_time": 480,
+   "start_index": 1980,
+   "end_index": 2459,
+   "distance": 1490,
+   "elevation_gain": 7.5,
+   "avg_speed": 3.1042,
+   "max_speed": 3.725,
+   "avg_hr": 169,
+   "max_hr": 175,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 730,
+   "moving_time": 730,
+   "start_index": 2460,
+   "end_index": 3189,
+   "distance": 2125,
+   "elevation_gain": 10.6,
+   "avg_speed": 2.911,
+   "max_speed": 3.493,
+   "avg_hr": 146,
+   "max_hr": 152,
+   "avg_grade": 0.01
+  }
+ ]
+}

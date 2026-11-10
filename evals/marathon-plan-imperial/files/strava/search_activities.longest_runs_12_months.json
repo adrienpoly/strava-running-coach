@@ -1,0 +1,169 @@
+{
+ "activities": [
+  {
+   "id": "9100000350",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-31T08:02:30",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "activity_tags": [
+    "LongRun"
+   ],
+   "summary": {
+    "distance": 22600.0,
+    "moving_time": 8046,
+    "elapsed_time": 8070,
+    "elevation_gain": 146.9,
+    "avg_speed": 2.8088,
+    "max_speed": 3.708,
+    "relative_effort": 154,
+    "total_calories": 1492,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 21,
+    "feels_like": 20,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9100000308",
+   "name": "Long run + coffee stop",
+   "sport_type": "Run",
+   "start_local": "2026-05-24T08:02:48",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 21700.0,
+    "moving_time": 7725,
+    "elapsed_time": 9289,
+    "elevation_gain": 141.0,
+    "avg_speed": 2.8091,
+    "max_speed": 3.708,
+    "relative_effort": 148,
+    "total_calories": 1432,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 20,
+    "feels_like": 19,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9100000385",
+   "name": "Lakefront Half Marathon",
+   "sport_type": "Run",
+   "start_local": "2026-04-19T07:00:05",
+   "description": "Official time 1:47:30. Negative split, felt strong to the end!",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 21340.0,
+    "moving_time": 6448,
+    "elapsed_time": 6452,
+    "elevation_gain": 138.7,
+    "avg_speed": 3.3096,
+    "max_speed": 4.369,
+    "relative_effort": 344,
+    "total_calories": 1408,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 8,
+    "feels_like": 7,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "8700000011",
+   "name": "Fall Classic Half",
+   "sport_type": "Run",
+   "start_local": "2025-10-05T09:05:12",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 21200.0,
+    "moving_time": 6730,
+    "elapsed_time": 6735,
+    "elevation_gain": 127.2,
+    "avg_speed": 3.1501,
+    "max_speed": 4.095,
+    "relative_effort": 359,
+    "total_calories": 1399,
+    "kudos_count": 3,
+    "achievement_count": 2,
+    "pr_count": 1
+   },
+   "activity_tags": [
+    "Race"
+   ],
+   "description": "1:52:10 official"
+  },
+  {
+   "id": "9100000280",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-17T08:02:20",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 20900.0,
+    "moving_time": 7440,
+    "elapsed_time": 7464,
+    "elevation_gain": 135.8,
+    "avg_speed": 2.8091,
+    "max_speed": 3.708,
+    "relative_effort": 143,
+    "total_calories": 1379,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 19,
+    "feels_like": 18,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  }
+ ],
+ "total_count": 228,
+ "offset": 0,
+ "has_next_page": true,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

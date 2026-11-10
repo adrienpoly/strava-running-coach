@@ -1,0 +1,217 @@
+{
+ "activities": [
+  {
+   "id": "9100000462",
+   "name": "Yoga",
+   "sport_type": "Yoga",
+   "start_local": "2026-05-28T07:00:22",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9100000455",
+   "name": "Evening Ride",
+   "sport_type": "Ride",
+   "start_local": "2026-05-25T17:30:15",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 28000.0,
+    "moving_time": 4500,
+    "elapsed_time": 4504,
+    "elevation_gain": 180,
+    "avg_speed": 6.2222,
+    "max_speed": 8.213,
+    "relative_effort": 38,
+    "total_calories": 1848,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9100000469",
+   "name": "Hike with friends",
+   "sport_type": "Hike",
+   "start_local": "2026-05-23T09:30:29",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 9500.0,
+    "moving_time": 7900,
+    "elapsed_time": 7904,
+    "elevation_gain": 420,
+    "avg_speed": 1.2025,
+    "max_speed": 1.587,
+    "relative_effort": 66,
+    "total_calories": 627,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9100000448",
+   "name": "Yoga",
+   "sport_type": "Yoga",
+   "start_local": "2026-05-21T07:00:08",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9100000441",
+   "name": "Evening Ride",
+   "sport_type": "Ride",
+   "start_local": "2026-05-18T17:30:01",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 28000.0,
+    "moving_time": 4500,
+    "elapsed_time": 4504,
+    "elevation_gain": 180,
+    "avg_speed": 6.2222,
+    "max_speed": 8.213,
+    "relative_effort": 38,
+    "total_calories": 1848,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9100000434",
+   "name": "Yoga",
+   "sport_type": "Yoga",
+   "start_local": "2026-05-14T07:00:54",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9100000427",
+   "name": "Evening Ride",
+   "sport_type": "Ride",
+   "start_local": "2026-05-11T17:30:47",
+   "location_summary": "Madison, Wisconsin",
+   "is_trainer": false,
+   "summary": {
+    "distance": 28000.0,
+    "moving_time": 4500,
+    "elapsed_time": 4504,
+    "elevation_gain": 180,
+    "avg_speed": 6.2222,
+    "max_speed": 8.213,
+    "relative_effort": 38,
+    "total_calories": 1848,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9100000420",
+   "name": "Yoga",
+   "sport_type": "Yoga",
+   "start_local": "2026-05-07T07:00:40",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  }
+ ],
+ "total_count": 8,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

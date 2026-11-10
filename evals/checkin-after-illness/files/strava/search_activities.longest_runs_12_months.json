@@ -1,0 +1,162 @@
+{
+ "activities": [
+  {
+   "id": "8800000101",
+   "name": "Autumn Half",
+   "sport_type": "Run",
+   "start_local": "2025-11-16T09:05:12",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 21150.0,
+    "moving_time": 7402,
+    "elapsed_time": 7407,
+    "elevation_gain": 126.9,
+    "avg_speed": 2.8573,
+    "max_speed": 3.715,
+    "relative_effort": 395,
+    "total_calories": 1396,
+    "kudos_count": 3,
+    "achievement_count": 2,
+    "pr_count": 1
+   },
+   "activity_tags": [
+    "Race"
+   ],
+   "description": "2:03:30"
+  },
+  {
+   "id": "9300000203",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-24T09:00:23",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 15000.0,
+    "moving_time": 5910,
+    "elapsed_time": 5914,
+    "elevation_gain": 97.5,
+    "avg_speed": 2.5381,
+    "max_speed": 3.35,
+    "relative_effort": 113,
+    "total_calories": 990,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 16,
+    "feels_like": 15,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000175",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-17T09:00:55",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 14100.0,
+    "moving_time": 5527,
+    "elapsed_time": 5531,
+    "elevation_gain": 91.6,
+    "avg_speed": 2.5511,
+    "max_speed": 3.367,
+    "relative_effort": 106,
+    "total_calories": 931,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000140",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-10T09:00:20",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 13000.0,
+    "moving_time": 5109,
+    "elapsed_time": 5113,
+    "elevation_gain": 84.5,
+    "avg_speed": 2.5445,
+    "max_speed": 3.359,
+    "relative_effort": 98,
+    "total_calories": 858,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000084",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-04-26T09:00:24",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 13000.0,
+    "moving_time": 5109,
+    "elapsed_time": 5113,
+    "elevation_gain": 84.5,
+    "avg_speed": 2.5445,
+    "max_speed": 3.359,
+    "relative_effort": 98,
+    "total_calories": 858,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  }
+ ],
+ "total_count": 187,
+ "offset": 0,
+ "has_next_page": true,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

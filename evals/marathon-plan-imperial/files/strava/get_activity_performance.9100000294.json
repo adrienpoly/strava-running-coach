@@ -1,0 +1,51 @@
+{
+ "sport_type": "Run",
+ "has_heartrate": true,
+ "has_device_watts": false,
+ "average_heartrate": 158,
+ "max_heartrate": 172,
+ "calories": 759,
+ "segment_efforts": [],
+ "best_efforts": [],
+ "laps": [
+  {
+   "elapsed_time": 1120,
+   "moving_time": 1120,
+   "start_index": 0,
+   "end_index": 1119,
+   "distance": 3200,
+   "elevation_gain": 16.0,
+   "avg_speed": 2.8571,
+   "max_speed": 3.429,
+   "avg_hr": 141,
+   "max_hr": 147,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 1870,
+   "moving_time": 1870,
+   "start_index": 1120,
+   "end_index": 2989,
+   "distance": 6440,
+   "elevation_gain": 32.2,
+   "avg_speed": 3.4439,
+   "max_speed": 4.133,
+   "avg_hr": 166,
+   "max_hr": 172,
+   "avg_grade": 0.01
+  },
+  {
+   "elapsed_time": 660,
+   "moving_time": 660,
+   "start_index": 2990,
+   "end_index": 3649,
+   "distance": 1860,
+   "elevation_gain": 9.3,
+   "avg_speed": 2.8182,
+   "max_speed": 3.382,
+   "avg_hr": 148,
+   "max_hr": 154,
+   "avg_grade": 0.01
+  }
+ ]
+}

@@ -1,0 +1,873 @@
+{
+ "activities": [
+  {
+   "id": "9300000210",
+   "name": "Back at it",
+   "sport_type": "Run",
+   "start_local": "2026-06-01T07:05:30",
+   "description": "First run after the flu, legs heavy",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5000.0,
+    "moving_time": 2050,
+    "elapsed_time": 2054,
+    "elevation_gain": 32.5,
+    "avg_speed": 2.439,
+    "max_speed": 3.22,
+    "relative_effort": 31,
+    "total_calories": 330,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000203",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-24T09:00:23",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 15000.0,
+    "moving_time": 5910,
+    "elapsed_time": 5914,
+    "elevation_gain": 97.5,
+    "avg_speed": 2.5381,
+    "max_speed": 3.35,
+    "relative_effort": 113,
+    "total_calories": 990,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 16,
+    "feels_like": 15,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000196",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-05-23T08:30:16",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5100.0,
+    "moving_time": 2014,
+    "elapsed_time": 2018,
+    "elevation_gain": 33.1,
+    "avg_speed": 2.5323,
+    "max_speed": 3.343,
+    "relative_effort": 30,
+    "total_calories": 337,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 15,
+    "feels_like": 14,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000189",
+   "name": "4x8min threshold",
+   "sport_type": "Run",
+   "start_local": "2026-05-21T18:15:09",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "activity_tags": [
+    "Workout"
+   ],
+   "summary": {
+    "distance": 9900.0,
+    "moving_time": 3470,
+    "elapsed_time": 3474,
+    "elevation_gain": 64.4,
+    "avg_speed": 2.853,
+    "max_speed": 3.766,
+    "relative_effort": 98,
+    "total_calories": 653,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 17,
+    "feels_like": 16,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000182",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-05-19T06:50:02",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7000.0,
+    "moving_time": 2730,
+    "elapsed_time": 2734,
+    "elevation_gain": 45.5,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 41,
+    "total_calories": 462,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000175",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-17T09:00:55",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 14100.0,
+    "moving_time": 5527,
+    "elapsed_time": 5531,
+    "elevation_gain": 91.6,
+    "avg_speed": 2.5511,
+    "max_speed": 3.367,
+    "relative_effort": 106,
+    "total_calories": 931,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000168",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-05-16T08:30:48",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5000.0,
+    "moving_time": 1980,
+    "elapsed_time": 1984,
+    "elevation_gain": 32.5,
+    "avg_speed": 2.5253,
+    "max_speed": 3.333,
+    "relative_effort": 30,
+    "total_calories": 330,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000161",
+   "name": "3x8min threshold",
+   "sport_type": "Run",
+   "start_local": "2026-05-14T18:15:41",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "activity_tags": [
+    "Workout"
+   ],
+   "summary": {
+    "distance": 9200.0,
+    "moving_time": 3190,
+    "elapsed_time": 3194,
+    "elevation_gain": 59.8,
+    "avg_speed": 2.884,
+    "max_speed": 3.807,
+    "relative_effort": 90,
+    "total_calories": 607,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 15,
+    "feels_like": 14,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000154",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-05-12T06:50:34",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7100.0,
+    "moving_time": 2769,
+    "elapsed_time": 2773,
+    "elevation_gain": 46.1,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 42,
+    "total_calories": 469,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000140",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-10T09:00:20",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 13000.0,
+    "moving_time": 5109,
+    "elapsed_time": 5113,
+    "elevation_gain": 84.5,
+    "avg_speed": 2.5445,
+    "max_speed": 3.359,
+    "relative_effort": 98,
+    "total_calories": 858,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000133",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-05-09T08:30:13",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5200.0,
+    "moving_time": 2059,
+    "elapsed_time": 2063,
+    "elevation_gain": 33.8,
+    "avg_speed": 2.5255,
+    "max_speed": 3.334,
+    "relative_effort": 31,
+    "total_calories": 343,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000126",
+   "name": "3x6min",
+   "sport_type": "Run",
+   "start_local": "2026-05-07T18:15:06",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8600.0,
+    "moving_time": 3027,
+    "elapsed_time": 3031,
+    "elevation_gain": 55.9,
+    "avg_speed": 2.8411,
+    "max_speed": 3.75,
+    "relative_effort": 86,
+    "total_calories": 568,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000119",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-05-05T06:50:59",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7000.0,
+    "moving_time": 2730,
+    "elapsed_time": 2734,
+    "elevation_gain": 45.5,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 41,
+    "total_calories": 462,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000112",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-03T09:00:52",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 12200.0,
+    "moving_time": 4795,
+    "elapsed_time": 4799,
+    "elevation_gain": 79.3,
+    "avg_speed": 2.5443,
+    "max_speed": 3.358,
+    "relative_effort": 92,
+    "total_calories": 805,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000105",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-05-02T08:30:45",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5000.0,
+    "moving_time": 1980,
+    "elapsed_time": 1984,
+    "elevation_gain": 32.5,
+    "avg_speed": 2.5253,
+    "max_speed": 3.333,
+    "relative_effort": 30,
+    "total_calories": 330,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000098",
+   "name": "Fartlek",
+   "sport_type": "Run",
+   "start_local": "2026-04-30T18:15:38",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8000.0,
+    "moving_time": 2816,
+    "elapsed_time": 2820,
+    "elevation_gain": 52.0,
+    "avg_speed": 2.8409,
+    "max_speed": 3.75,
+    "relative_effort": 80,
+    "total_calories": 528,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000091",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-04-28T06:50:31",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7100.0,
+    "moving_time": 2769,
+    "elapsed_time": 2773,
+    "elevation_gain": 46.1,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 42,
+    "total_calories": 469,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000084",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-04-26T09:00:24",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 13000.0,
+    "moving_time": 5109,
+    "elapsed_time": 5113,
+    "elevation_gain": 84.5,
+    "avg_speed": 2.5445,
+    "max_speed": 3.359,
+    "relative_effort": 98,
+    "total_calories": 858,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000077",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-04-25T08:30:17",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5000.0,
+    "moving_time": 1980,
+    "elapsed_time": 1984,
+    "elevation_gain": 32.5,
+    "avg_speed": 2.5253,
+    "max_speed": 3.333,
+    "relative_effort": 30,
+    "total_calories": 330,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000070",
+   "name": "Tempo 15min",
+   "sport_type": "Run",
+   "start_local": "2026-04-23T18:15:10",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8800.0,
+    "moving_time": 3098,
+    "elapsed_time": 3102,
+    "elevation_gain": 57.2,
+    "avg_speed": 2.8405,
+    "max_speed": 3.75,
+    "relative_effort": 88,
+    "total_calories": 581,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000063",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-04-21T06:50:03",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7000.0,
+    "moving_time": 2730,
+    "elapsed_time": 2734,
+    "elevation_gain": 45.5,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 41,
+    "total_calories": 462,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 9,
+    "feels_like": 8,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000056",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-04-19T09:00:56",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 12400.0,
+    "moving_time": 4873,
+    "elapsed_time": 4877,
+    "elevation_gain": 80.6,
+    "avg_speed": 2.5446,
+    "max_speed": 3.359,
+    "relative_effort": 93,
+    "total_calories": 818,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000049",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-04-18T08:30:49",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5100.0,
+    "moving_time": 2020,
+    "elapsed_time": 2024,
+    "elevation_gain": 33.1,
+    "avg_speed": 2.5248,
+    "max_speed": 3.333,
+    "relative_effort": 30,
+    "total_calories": 337,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000042",
+   "name": "Hills x8",
+   "sport_type": "Run",
+   "start_local": "2026-04-16T18:15:42",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8500.0,
+    "moving_time": 2992,
+    "elapsed_time": 2996,
+    "elevation_gain": 55.2,
+    "avg_speed": 2.8409,
+    "max_speed": 3.75,
+    "relative_effort": 85,
+    "total_calories": 561,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000035",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-04-14T06:50:35",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7200.0,
+    "moving_time": 2808,
+    "elapsed_time": 2812,
+    "elevation_gain": 46.8,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 42,
+    "total_calories": 475,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 8,
+    "feels_like": 7,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000147",
+   "name": "Spring 10K",
+   "sport_type": "Run",
+   "start_local": "2026-04-12T09:30:27",
+   "description": "53:30 chip time",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 10050.0,
+    "moving_time": 3210,
+    "elapsed_time": 3214,
+    "elevation_gain": 65.3,
+    "avg_speed": 3.1308,
+    "max_speed": 4.133,
+    "relative_effort": 171,
+    "total_calories": 663,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 9,
+    "feels_like": 8,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000021",
+   "name": "Easy + strides",
+   "sport_type": "Run",
+   "start_local": "2026-04-11T08:30:21",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 5000.0,
+    "moving_time": 1980,
+    "elapsed_time": 1984,
+    "elevation_gain": 32.5,
+    "avg_speed": 2.5253,
+    "max_speed": 3.333,
+    "relative_effort": 30,
+    "total_calories": 330,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 9,
+    "feels_like": 8,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000014",
+   "name": "Fartlek",
+   "sport_type": "Run",
+   "start_local": "2026-04-09T18:15:14",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8400.0,
+    "moving_time": 2957,
+    "elapsed_time": 2961,
+    "elevation_gain": 54.6,
+    "avg_speed": 2.8407,
+    "max_speed": 3.75,
+    "relative_effort": 84,
+    "total_calories": 554,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9300000007",
+   "name": "Easy run",
+   "sport_type": "Run",
+   "start_local": "2026-04-07T06:50:07",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 7000.0,
+    "moving_time": 2730,
+    "elapsed_time": 2734,
+    "elevation_gain": 45.5,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 41,
+    "total_calories": 462,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 7,
+    "feels_like": 6,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  }
+ ],
+ "total_count": 29,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

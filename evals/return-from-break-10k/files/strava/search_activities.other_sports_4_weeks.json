@@ -1,0 +1,391 @@
+{
+ "activities": [
+  {
+   "id": "9200000266",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-30T18:00:46",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 27000.0,
+    "moving_time": 3600,
+    "elapsed_time": 3604,
+    "elevation_gain": 180,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 30,
+    "total_calories": 1782,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000294",
+   "name": "Renfo mollets et gainage",
+   "sport_type": "Workout",
+   "start_local": "2026-05-27T12:30:14",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 1500,
+    "elapsed_time": 1504,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 12,
+    "total_calories": 125,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9200000259",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-26T18:00:39",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 24750.0,
+    "moving_time": 3300,
+    "elapsed_time": 3304,
+    "elevation_gain": 165,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 28,
+    "total_calories": 1634,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000252",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-21T18:00:32",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 27000.0,
+    "moving_time": 3600,
+    "elapsed_time": 3604,
+    "elevation_gain": 180,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 30,
+    "total_calories": 1782,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000287",
+   "name": "Renfo mollets et gainage",
+   "sport_type": "Workout",
+   "start_local": "2026-05-20T12:30:07",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 1500,
+    "elapsed_time": 1504,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 12,
+    "total_calories": 125,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9200000245",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-19T18:00:25",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 22500.0,
+    "moving_time": 3000,
+    "elapsed_time": 3004,
+    "elevation_gain": 150,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 25,
+    "total_calories": 1485,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000238",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-17T18:00:18",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 33750.0,
+    "moving_time": 4500,
+    "elapsed_time": 4504,
+    "elevation_gain": 225,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 38,
+    "total_calories": 2228,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000231",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-14T18:00:11",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 27000.0,
+    "moving_time": 3600,
+    "elapsed_time": 3604,
+    "elevation_gain": 180,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 30,
+    "total_calories": 1782,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000280",
+   "name": "Renfo mollets et gainage",
+   "sport_type": "Workout",
+   "start_local": "2026-05-13T12:30:00",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 1500,
+    "elapsed_time": 1504,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 12,
+    "total_calories": 125,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9200000224",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-12T18:00:04",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 20250.0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 135,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 22,
+    "total_calories": 1336,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000217",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-10T18:00:57",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 31500.0,
+    "moving_time": 4200,
+    "elapsed_time": 4204,
+    "elevation_gain": 210,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 35,
+    "total_calories": 2079,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000210",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-07T18:00:50",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 29250.0,
+    "moving_time": 3900,
+    "elapsed_time": 3904,
+    "elevation_gain": 195,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 32,
+    "total_calories": 1930,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9200000273",
+   "name": "Renfo mollets et gainage",
+   "sport_type": "Workout",
+   "start_local": "2026-05-06T12:30:53",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 1500,
+    "elapsed_time": 1504,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 12,
+    "total_calories": 125,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9200000203",
+   "name": "Sortie vélo",
+   "sport_type": "Ride",
+   "start_local": "2026-05-05T18:00:43",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 22500.0,
+    "moving_time": 3000,
+    "elapsed_time": 3004,
+    "elevation_gain": 150,
+    "avg_speed": 7.5,
+    "max_speed": 9.9,
+    "relative_effort": 25,
+    "total_calories": 1485,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  }
+ ],
+ "total_count": 14,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

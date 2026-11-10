@@ -1,0 +1,44 @@
+{
+ "sports": [
+  "Run"
+ ],
+ "all_time": false,
+ "efforts": [
+  {
+   "sport": "Run",
+   "best_effort_type": "Fastest5k",
+   "value": 1570,
+   "unit": "seconds",
+   "year": 2026,
+   "date": "2026-04-12",
+   "activity_id": "9300000147"
+  },
+  {
+   "sport": "Run",
+   "best_effort_type": "Fastest10k",
+   "value": 3198,
+   "unit": "seconds",
+   "year": 2026,
+   "date": "2026-04-12",
+   "activity_id": "9300000147"
+  },
+  {
+   "sport": "Run",
+   "best_effort_type": "Fastest10k",
+   "value": 3345,
+   "unit": "seconds",
+   "year": 2025,
+   "date": "2025-10-19",
+   "activity_id": "8700000555"
+  },
+  {
+   "sport": "Run",
+   "best_effort_type": "FastestHalfMarathon",
+   "value": 7410,
+   "unit": "seconds",
+   "year": 2025,
+   "date": "2025-11-16",
+   "activity_id": "8800000101"
+  }
+ ]
+}

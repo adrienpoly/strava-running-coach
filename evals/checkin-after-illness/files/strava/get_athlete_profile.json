@@ -1,0 +1,20 @@
+{
+ "id": 93000001,
+ "first_name": "Lena",
+ "last_name": "Example",
+ "measurement_preference": "Metric",
+ "gender": "Woman",
+ "weight": 58,
+ "weight_display": "58.0 kg",
+ "location": {
+  "city": "Leeds",
+  "state": "",
+  "country": "United Kingdom"
+ },
+ "current_focus": {
+  "id": "5300001",
+  "focus_type": "TrainForEvent",
+  "open_text": "Summer half under 1:58",
+  "expires_at_local": "2026-07-19T23:59:59"
+ }
+}

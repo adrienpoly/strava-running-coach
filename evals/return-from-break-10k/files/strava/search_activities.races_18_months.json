@@ -1,0 +1,79 @@
+{
+ "activities": [
+  {
+   "id": "9200000175",
+   "name": "parkrun",
+   "sport_type": "Run",
+   "start_local": "2026-03-28T09:00:15",
+   "description": "23:52, record sur 5 km",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 5020.0,
+    "moving_time": 1432,
+    "elapsed_time": 1436,
+    "elevation_gain": 32.6,
+    "avg_speed": 3.5056,
+    "max_speed": 4.627,
+    "relative_effort": 76,
+    "total_calories": 331,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "8600000910",
+   "name": "10 km de la ville",
+   "sport_type": "Run",
+   "start_local": "2025-09-06T09:05:12",
+   "location_summary": "Lyon, France",
+   "is_trainer": false,
+   "summary": {
+    "distance": 10080.0,
+    "moving_time": 2962,
+    "elapsed_time": 2967,
+    "elevation_gain": 60.5,
+    "avg_speed": 3.4031,
+    "max_speed": 4.424,
+    "relative_effort": 158,
+    "total_calories": 665,
+    "kudos_count": 3,
+    "achievement_count": 2,
+    "pr_count": 1
+   },
+   "activity_tags": [
+    "Race"
+   ],
+   "description": "49:30 officiel"
+  }
+ ],
+ "total_count": 2,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

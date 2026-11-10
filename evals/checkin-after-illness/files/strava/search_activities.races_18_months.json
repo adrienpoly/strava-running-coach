@@ -1,0 +1,79 @@
+{
+ "activities": [
+  {
+   "id": "9300000147",
+   "name": "Spring 10K",
+   "sport_type": "Run",
+   "start_local": "2026-04-12T09:30:27",
+   "description": "53:30 chip time",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 10050.0,
+    "moving_time": 3210,
+    "elapsed_time": 3214,
+    "elevation_gain": 65.3,
+    "avg_speed": 3.1308,
+    "max_speed": 4.133,
+    "relative_effort": 171,
+    "total_calories": 663,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 9,
+    "feels_like": 8,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "8800000101",
+   "name": "Autumn Half",
+   "sport_type": "Run",
+   "start_local": "2025-11-16T09:05:12",
+   "location_summary": "Leeds, England",
+   "is_trainer": false,
+   "summary": {
+    "distance": 21150.0,
+    "moving_time": 7402,
+    "elapsed_time": 7407,
+    "elevation_gain": 126.9,
+    "avg_speed": 2.8573,
+    "max_speed": 3.715,
+    "relative_effort": 395,
+    "total_calories": 1396,
+    "kudos_count": 3,
+    "achievement_count": 2,
+    "pr_count": 1
+   },
+   "activity_tags": [
+    "Race"
+   ],
+   "description": "2:03:30"
+  }
+ ],
+ "total_count": 2,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "sport_type": "Run",
+ "has_heartrate": true,
+ "has_device_watts": false,
+ "average_heartrate": 168,
+ "max_heartrate": 181,
+ "calories": 1408,
+ "segment_efforts": [],
+ "best_efforts": [
+  {
+   "name": "Fastest5k",
+   "type_value": "Fastest5k",
+   "display_text": "5K",
+   "value": 1475,
+   "unit": "seconds"
+  },
+  {
+   "name": "Fastest10k",
+   "type_value": "Fastest10k",
+   "display_text": "10K",
+   "value": 2990,
+   "unit": "seconds"
+  },
+  {
+   "name": "FastestHalfMarathon",
+   "type_value": "FastestHalfMarathon",
+   "display_text": "Half-Marathon",
+   "value": 6398,
+   "unit": "seconds"
+  }
+ ],
+ "laps": [
+  {
+   "elapsed_time": 6448,
+   "moving_time": 6448,
+   "start_index": 0,
+   "end_index": 6447,
+   "distance": 21340.0,
+   "elevation_gain": 106.7,
+   "avg_speed": 3.3096,
+   "max_speed": 3.971,
+   "avg_hr": 168,
+   "max_hr": 174,
+   "avg_grade": 0.01
+  }
+ ]
+}

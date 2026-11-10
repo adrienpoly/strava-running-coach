@@ -1,0 +1,81 @@
+{
+ "activities": [
+  {
+   "id": "9300000231",
+   "name": "Gym: legs and core",
+   "sport_type": "WeightTraining",
+   "start_local": "2026-05-20T19:00:51",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9300000224",
+   "name": "Gym: legs and core",
+   "sport_type": "WeightTraining",
+   "start_local": "2026-05-13T19:00:44",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  },
+  {
+   "id": "9300000217",
+   "name": "Gym: legs and core",
+   "sport_type": "WeightTraining",
+   "start_local": "2026-05-06T19:00:37",
+   "is_trainer": true,
+   "summary": {
+    "distance": 0,
+    "moving_time": 2700,
+    "elapsed_time": 2704,
+    "elevation_gain": 0,
+    "avg_speed": 0,
+    "max_speed": 0,
+    "relative_effort": 22,
+    "total_calories": 225,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   }
+  }
+ ],
+ "total_count": 3,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "id": 91000001,
+ "first_name": "Maya",
+ "last_name": "Example",
+ "measurement_preference": "Imperial",
+ "gender": "Woman",
+ "weight": 61,
+ "weight_display": "134.5 lb",
+ "location": {
+  "city": "Madison",
+  "state": "Wisconsin",
+  "country": "USA"
+ },
+ "current_focus": {
+  "id": "5100001",
+  "focus_type": "TrainForEvent",
+  "open_text": "Chicago Marathon",
+  "expires_at_local": "2026-10-11T23:59:59"
+ }
+}
