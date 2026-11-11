@@ -2,6 +2,7 @@
 
     python3 -m unittest discover -s tests -v
 """
+import json
 import re
 import subprocess
 import sys
@@ -180,6 +181,101 @@ class Check(unittest.TestCase):
         self.assertIn("5th build week in a row", out)
 
 
+def streams(segments, step=100, hr=None):
+    """Streams for a run made of (metres, seconds per km) segments, one sample every `step` metres."""
+    t, d, out = 0.0, 0, {"time": [0], "distance": [0.0]}
+    for metres, pace in segments:
+        for _ in range(metres // step):
+            t, d = t + pace * step / 1000, d + step
+            out["time"].append(round(t))
+            out["distance"].append(float(d))
+    if hr:
+        out["heart_rate"] = [hr(x) for x in out["distance"]]
+    return out
+
+
+def activity(data, *args):
+    return run("activity", *args, stdin=data if isinstance(data, str) else json.dumps(data))
+
+
+class Activity(unittest.TestCase):
+    def test_even_run(self):
+        out = activity(streams([(10000, 360)], hr=lambda x: 140), "--zones", "120,150,165,178")
+        self.assertIn("ACTIVITY  10.00 km in 1:00:00 = 6:00/km", out)
+        self.assertEqual(len(re.findall(r"^ +\d+ +6:00 +140$", out, re.M)), 10)
+        self.assertIn("+0.0% = even", out)
+        self.assertIn("speed per heartbeat down 0.0%", out)
+        self.assertIn("Z1 0% | Z2 100% | Z3 0%", out)
+        self.assertNotIn("NOTE", out)
+
+    def test_fade_fast_start_and_drift(self):
+        data = streams([(1000, 300), (9000, 330), (10000, 380)], hr=lambda x: 150 + x / 1000)
+        out = activity(data, "--kind", "long", "--prior-longest", "16000")
+        self.assertIn("positive split (slowed)", out)
+        self.assertIn("NOTE  fast start: first km in 5:00", out)
+        self.assertRegex(out, r"NOTE  fade: last quarter 1\d\.\d% slower than the first half")
+        self.assertRegex(out, r"speed per heartbeat down 1\d\.\d%")
+        self.assertIn("+25% -> over the 10% line (17.6)", out)
+        self.assertIn("within the 10% line", activity(data, "--kind", "long", "--prior-longest", "19000"))
+        self.assertNotIn("DRIFT", activity(data, "--kind", "race"))
+
+    def test_stop_is_found_and_counted_in_the_pace(self):
+        data = streams([(5000, 360)])
+        data["time"] = [x + (120 if i > 25 else 0) for i, x in enumerate(data["time"])]
+        out = activity(data)
+        self.assertIn("STOPS  about 2:00 stopped or walking, at km 2.5", out)
+        self.assertRegex(out, r" 3 +8:00  stop or walk")
+        self.assertIn("no heart rate", out)
+
+    def test_miles_rows_and_other_json_shapes(self):
+        data = streams([(8046, 373)], step=149)                    # 5 miles at 10:00 per mile
+        out = activity(data, "--unit", "mi")
+        self.assertRegex(out, r"ACTIVITY  5\.00 mi in 50:0\d = 10:00/mi")
+        rows = "time,distance\n" + "\n".join(f"{t},{d}" for t, d in zip(data["time"], data["distance"]))
+        self.assertEqual(activity(rows, "--unit", "mi"), out)
+        api = [{"type": k, "data": v} for k, v in data.items()]
+        self.assertEqual(activity(api, "--unit", "mi"), out)
+        self.assertEqual(activity({"streams": data}, "--unit", "mi"), out)
+
+    def test_bad_input(self):
+        self.assertIn('need the "time" and "distance" streams', activity({"heart_rate": [140, 141]}))
+        self.assertIn("nothing to analyse", activity(""))
+        self.assertIn("bad lap", run("activity", "--laps", "1000"))
+
+    def test_reps_are_guessed_from_laps(self):
+        laps = ["2000:780:138", "1500:480:165", "290:120:150", "1510:480:167", "285:120:152", "1490:480:169", "2125:730:146"]
+        out = run("activity", "--kind", "workout", "--target", "5:15-5:25", "--laps", *laps)
+        self.assertIn("REPS  3 (laps 2, 4, 6; guessed from pace, correct with --reps): 4.50 km in 24:00, mean 5:20/km", out)
+        self.assertIn("recoveries: 2, mean 2:00", out)
+        self.assertIn("3 in range, 0 faster, 0 slower", out)
+        self.assertIn("HR 165 -> 169", out)
+
+    def test_reps_without_warm_up_laps_and_with_a_fade(self):
+        laps = ["1000:245", "400:150", "1000:257", "400:170", "1000:266", "400:190", "1000:284"]
+        out = run("activity", "--kind", "workout", "--target", "4:20-4:27", "--laps", *laps)
+        self.assertIn("REPS  4 (laps 1, 3, 5, 7;", out)
+        self.assertIn("last against first +15.9%", out)
+        self.assertIn("1 in range, 2 faster, 1 slower", out)       # 4:05 and 4:17 fast, 4:26 in, 4:44 slow
+
+    def test_auto_laps_and_named_reps(self):
+        auto = run("activity", "--laps", "1000:340", "1000:338", "1000:335", "1000:341", "600:200")
+        self.assertIn("no clear repetitions", auto)
+        self.assertNotIn("REPS", auto)
+        named = run("activity", "--reps", "2,4", "--laps", "2000:780", "1500:480", "290:120", "1510:480", "2125:730")
+        self.assertIn("REPS  2 (laps 2, 4):", named)
+
+    def test_fixture_streams_tell_the_story_the_cases_rely_on(self):
+        strava = ROOT / "evals" / "activity-long-run-fade" / "files" / "strava"
+        out = activity(next(strava.glob("get_activity_streams.*.json")).read_text(), "--kind", "long", "--prior-longest", "16200")
+        self.assertIn("ACTIVITY  21.10 km in 2:10:28", out)
+        self.assertIn("STOPS  about 1:3", out)
+        self.assertIn("+30% -> over the 10% line (17.8)", out)
+        strava = ROOT / "evals" / "activity-race-fast-start" / "files" / "strava"
+        out = activity(next(strava.glob("get_activity_streams.*.json")).read_text(), "--kind", "race", "--unit", "mi")
+        self.assertRegex(out, r" 1 +7:40 ")
+        self.assertIn("+9.1% = positive split (slowed)", out)
+
+
 class GeneratedFiles(unittest.TestCase):
     def test_dist_is_in_sync(self):
         out = subprocess.run([sys.executable, str(ROOT / "tools" / "build_dist.py"), "--check"], capture_output=True, text=True)
@@ -204,7 +300,8 @@ class GeneratedFiles(unittest.TestCase):
         committed = {p.relative_to(ROOT / "evals"): p.read_text() for p in (ROOT / "evals").glob("*/files/strava/*")}
         with tempfile.TemporaryDirectory() as tmp:
             gen.ROOT = Path(tmp)
-            gen.maya(), gen.tom(), gen.lena()
+            for runner in gen.RUNNERS:
+                runner()
             fresh = {p.relative_to(tmp): p.read_text() for p in Path(tmp).glob("*/files/strava/*")}
         self.assertEqual(fresh, committed)
 

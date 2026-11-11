@@ -1,0 +1,14 @@
+{
+ "id": 95000001,
+ "first_name": "Hugo",
+ "last_name": "Exemple",
+ "measurement_preference": "Metric",
+ "gender": "Man",
+ "weight": 71,
+ "weight_display": "71.0 kg",
+ "location": {
+  "city": "Nantes",
+  "state": "",
+  "country": "France"
+ }
+}

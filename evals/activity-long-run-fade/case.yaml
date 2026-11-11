@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: activity-long-run-fade
+expected_outcome: |
+  Short feedback on the 21.1 km run of Sunday 31 May 2026: it started faster than her usual long-run pace, was 30%
+  longer than anything in the previous month, on a warm day and without fuel, and it faded badly after 16 km. The reply
+  explains the fade with numbers from the run, treats the jump in distance as the main thing to change, does not read
+  the run as a loss of fitness, and says what to do in the next days and in the next long run.
+context:
+  scaffold_script: place-files.sh

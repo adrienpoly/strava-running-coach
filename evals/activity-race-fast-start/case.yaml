@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: activity-race-fast-start
+expected_outcome: |
+  Short feedback in miles on the 10K of Sunday 31 May 2026 (official 52:48): the first mile in about 7:40 was faster
+  than goal pace and faster than his 5K race pace, and every mile after it was slower, for a second half about 9% slower
+  than the first. The reply says what his recent 5K supported on the day (about 51 minutes), that the result understates
+  his fitness, how to pace the next one, and how to recover.
+context:
+  scaffold_script: place-files.sh

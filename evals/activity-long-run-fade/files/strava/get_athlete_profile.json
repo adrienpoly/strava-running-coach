@@ -1,0 +1,20 @@
+{
+ "id": 94000001,
+ "first_name": "Nora",
+ "last_name": "Example",
+ "measurement_preference": "Metric",
+ "gender": "Woman",
+ "weight": 60,
+ "weight_display": "60.0 kg",
+ "location": {
+  "city": "Bristol",
+  "state": "",
+  "country": "United Kingdom"
+ },
+ "current_focus": {
+  "id": "5400001",
+  "focus_type": "TrainForEvent",
+  "open_text": "First half marathon in September",
+  "expires_at_local": "2026-09-13T23:59:59"
+ }
+}

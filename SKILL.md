@@ -1,17 +1,18 @@
 ---
 name: strava-running-coach
-description: Running coach on the runner's Strava data. Use for any running plan (5K to marathon), training read-out, pace or goal-time question, check-in or plan change, even if Strava isn't mentioned.
+description: Running coach on a runner's Strava data. Use for running plans (5K to marathon), feedback on a run, workout or race, training read-outs, pace or goal questions, check-ins, even if Strava isn't named.
 ---
 
 # Strava Running Coach
 
 Coach runners from what they actually did. The Strava connector supplies the training log, the bundled script does the arithmetic, and you supply the judgement: what the numbers mean for this person and what to do next.
 
-Three jobs, one foundation:
+Four jobs, one foundation:
 
 - **Plan**: build a training plan toward a race or a fitness goal (steps 1-8).
 - **Check-in**: compare the plan with what Strava shows and adapt the coming weeks ("Check-in mode").
 - **Read-out**: "how is my training going?", "what paces should I use?", "is my goal realistic?". Do steps 1-6 and answer the question. A plan is an offer here, not an obligation.
+- **Activity feedback**: "how was my run?", "did I get that session right?", "what went wrong in my race?". One run, read against the runner's own recent running ("Activity feedback mode"). It needs six weeks of context, not steps 1-6.
 
 Answer in the runner's language and units (`measurement_preference` in the Strava profile), and keep it clear which numbers Strava measured and which are your estimates.
 
@@ -44,7 +45,7 @@ Run these together; all are read-only. "Run types" means `sport_types: ["Run","T
 Detail calls are large, so make a handful, each for a reason:
 
 - `get_activity_performance` on 2-3 ordinary easy runs and on the latest race or hardest effort (average and max HR), and on a recent workout when its execution matters (laps mirror the workout when the watch was programmed; otherwise there is one lap).
-- `get_activity_streams` only for a within-run question (fade in a long run, rep paces when laps don't help): ask for `["time","distance","heart_rate"]` with `resolution` 100-300 and compute pace from distance and time differences; `velocity_smooth` samples are instantaneous and noisy.
+- `get_activity_streams` only for a within-run question (a fade in a long run, the pacing of a race): ask for `["time","distance","heart_rate","altitude"]` at about 8 points per km and hand the result to `activity` ("Activity feedback mode"). Leave `velocity_smooth` alone: its samples are instantaneous and noisy.
 - `get_gear` only if the runner asks about shoes. `get_training_plan` returns a link to a partner app, not data; skip it unless asked.
 
 Widen call 3 to 26 or 52 weeks only when the last 12 are unrepresentative (injury, long break, or the runner says so).
@@ -104,7 +105,7 @@ Distances: `5k`, `10k`, `hm`, `m`, `mile`, or a number of km. `--weeks` is whole
 
 If the runner stopped running after the anchor was set (injury, illness, a long break), add `--layoff DAYS` with the length of the break, whatever has happened since, plus `--cross-trained` when they kept cycling or similar (widen call 8 to cover the break before deciding). The script then discounts fitness by a rule of thumb, and every pace stays provisional until a test.
 
-**Plan lint** (step 8): `python3 runcoach.py check`.
+**Plan lint** (step 8): `python3 runcoach.py check`. **One run** ("Activity feedback mode"): `python3 runcoach.py activity`.
 
 The script converts units itself (`--unit mi`). To quote a single Strava value in the runner's units, request it with `use_preferred_units: true` instead of converting in your head.
 
@@ -257,7 +258,7 @@ Keep it tight. Explain a term only when the runner is new to it.
 ## Check-in mode
 
 1. **Find the plan**: earlier in the conversation, pasted, or in a file. Without one, do a read-out.
-2. **Pull**: call 3 over at least the last 8 weeks, then `digest`, plus detail calls for the key sessions of the period.
+2. **Pull**: call 3 over at least the last 8 weeks, then `digest`, plus detail calls for the key sessions of the period (`activity --laps` shows how a session was run).
 3. **Planned vs done**: sessions, volume, long run, and how the key session went (rep paces against targets, HR at a given pace against earlier weeks).
 4. **Read it.** About 80% or more of the plan done, sessions on target: carry on. Signs of strain: easy runs slower at the same or higher HR for two weeks or more, two key sessions missed or cut short, relative effort climbing while volume does not, or the runner reports fatigue, poor sleep or a niggle. Signs of headroom: key sessions clearly comfortable, lower HR at the same paces.
 5. **Adjust the next 1-2 weeks**, then re-run `check` with the actual recent weeks:
@@ -269,11 +270,41 @@ Keep it tight. Explain a term only when the runner is new to it.
    - Pain: apply the pain rule.
 6. **Reply short**, in this order: the decision in one sentence; planned versus done in two or three lines with numbers; this week's sessions; what changes later, showing at-a-glance rows only for the weeks that change; what would change the call. Aim for 150-300 words plus that table. Leave out a fresh goal analysis unless the check-in changes the goal, and anything the runner already knows.
 
+## Activity feedback mode
+
+One run, read against this runner's own recent running. It is not a training read-out: do not pull twelve weeks for it, and do not turn the answer into a plan.
+
+1. **Find the run and its frame.** Run together: `get_athlete_profile` and `get_athlete_zones` (unless the conversation already has them), and `search_activities` with run types, `start_date_min` = 6 weeks ago, `include_tags: true`, `first: 60`. That one list locates the run (the latest by default; otherwise match the day, name or distance they gave, and say which run you took), carries its weather and the runner's notes, and is the comparison set: recent runs of the same kind, the longest run of the 30 days before it, what was run in the two days before. A short run on the same day is its warm-up or cool-down. Give the run a `kind` as in step 2. When a plan is in the conversation, the planned session is the reference. For an `other`, a treadmill run or a manual entry, say what cannot be judged and keep to the summary.
+2. **Pull the detail**, each call for a reason:
+   - `get_activity_performance` on the run: average and max HR (check `has_heartrate`), laps, best efforts.
+   - `get_activity_streams` on the run: `["time","distance","heart_rate","altitude"]`, `resolution` about 8 points per km (100 up to 12 km, 200 up to 25 km, 300 beyond). Skip it for a workout whose laps mirror the session.
+   - `get_activity_performance` on one or two recent runs of the same kind, when their heart rate would settle the verdict.
+   - A workout or a race is judged against the runner's current paces. If the conversation does not have them, make calls 6 and 7 of step 1 and run `paces`, leaving out the race being judged: what matters is what fitness supported before it.
+3. **Run the numbers.** Pipe the streams to the script exactly as the connector returned them; give laps on the command line:
+
+```bash
+python3 runcoach.py activity --kind long --zones 121,151,166,180 --prior-longest 16200 [--unit mi] <<'EOF'
+{"heart_rate":[131,138,...],"distance":[0,106.1,...],"altitude":[12.4,...],"time":[0,37,...]}
+EOF
+python3 runcoach.py activity --kind workout --target 4:20-4:27 \
+  --laps 2000:720:135 1000:245:171 400:150:145 1000:248:174 400:155:149 1000:257:176 1500:570:150 < /dev/null
+```
+
+   `--kind` is `easy`, `long`, `workout` or `race`. `--zones` takes the `max` of heart-rate zones 1 to 4. `--prior-longest` is the longest run of the 30 days before this one, in metres. `--laps` lists every lap in order as `distance:moving_time:avg_hr`; the script guesses which laps are the repetitions and says so, and `--reps 2,4,6` corrects it. `--target` is the pace range the reps were meant for, from `paces` or the plan. Output: splits per km or mile, quarters and halves, steadiness, stops, drift (easy and long runs), time in zones, and the reps with their spread, trend and recoveries. Stream time is elapsed time, so a stop shows up as a slow split. That is the honest pace, and it differs from Strava's moving-time average.
+4. **Read it by kind**, against the runner's own recent runs of that kind before any table.
+   - **Easy run.** One question: was it easy? Heart rate decides, as in step 4: zones 1-2 when the zones are believable, or at or below their usual easy-run HR. Pace is not a result here. Faster than usual at the usual heart rate is a good sign, not a reason to speed up.
+   - **Long run.** Length first: a run over the 10% line is the finding that matters, whatever the pace was, and the next long run goes back to the level before it instead of building on it. Then the shape: even, or a faster finish, is a good long run; a fade points to a start faster than their usual long-run pace, heat, no fuel, or a distance not trained yet, and usually to more than one. Then drift: heart rate creeping up at a steady pace is normal and grows with heat; a large fall in speed per heartbeat (over about 5%, by convention) on a cool day at a steady pace says the duration is at the edge of current endurance. Stops and hills distort it.
+   - **Workout.** Reps against the target range: how many in range, the spread, the trend. Read rep by rep, because a mean pace on target can hide a session run badly. Fast first reps and slow last ones mean the session became a different session, and lengthening recoveries tell the same story. Even reps with the last one fastest is a session well run. When the reps missed, check the target against `paces` before blaming the runner: the target may be the error. Heart rate lags by a minute or more, so never judge a short rep or a first rep by it. With one lap or auto-laps, streams at this resolution cannot resolve short reps: say so, and judge the whole or ask for the structure.
+   - **Race.** The result first, from the official time and distance (step 2), against the equivalent `paces` gave from earlier results. Then the pacing: halves within about 2% are even; an opening well under the average followed by a fade is a pacing error, and the comparison that shows it is the first km or mile against the pace fitness supported, not against the goal. A badly paced race understates fitness, so keep the earlier anchor when it is higher and fresher than 12 weeks, and say why. A well-paced race is the new anchor: offer updated paces. Then recovery, by the calendar rule in step 7.
+   - **Always**: temperature and humidity against their usual, the climb column (a slow split with 15 m of climb is not a slow split), and the two days before.
+5. **Know what the data cannot carry.** Wrist heart rate can read high in the opening minutes or stick at a flat value: trust the pattern, not a point, and say so when the script flags it. One odd split is GPS noise. Without heart rate, read the pacing only and say so. Do not comment on cadence, stride or form from watch data. One training run is not a fitness test: say what the run shows, not what kind of runner they are.
+6. **Reply short**, in this order: the verdict in one sentence; the three or four numbers that carry it, with a few splits or reps in a small table only when the shape is the point; what explains it, separating what the data shows from what you suspect; what to do in the next days and in the next run of this kind; at most one question, and only if the answer would change the reading (how it felt, what was eaten or drunk). Aim for 120-250 words plus the table. If a plan is in the conversation and this run changes the coming days, say how.
+
 ## What the evidence supports
 
-- **Reasonably supported.** Sudden jumps in a single run raise overuse-injury risk: in a 2025 cohort of 5,205 runners, runs more than 10% longer than the longest of the previous 30 days carried roughly 1.5 to 2.3 times the injury rate. A previous injury is the most consistent predictor of the next one. Newer runners are injured more often per hour than established ones. Mostly-easy training with a small dose of hard work. A taper of about two weeks that cuts volume by 41-60% and keeps intensity. Strength training improves running economy.
-- **Convention: use it, don't oversell it.** The 10% weekly rule (a trial in novices found no benefit over a faster build; jumps above about 30% are the concern). Lighter weeks. One change at a time. The return-from-break percentages. Long-run time caps. Phase proportions. The goal-gap rule of thumb.
-- **Not supported: avoid.** The ACWR "sweet spot" of 0.8-1.3 and any injury-risk percentage attached to it: it comes from team sports, and in that same runner cohort neither ACWR nor week-to-week change predicted injury the way the model claims. "Strength training cuts running injuries by X%": pooled trials in runners show no clear effect, except in supervised programmes. Claims that polarized beats pyramidal training or the reverse: differences are small and individual. Age-based maximum heart rate formulas treated as fact.
+- **Reasonably supported.** Sudden jumps in a single run raise overuse-injury risk: in a 2025 cohort of 5,205 runners, runs more than 10% longer than the longest of the previous 30 days carried roughly 1.5 to 2.3 times the injury rate. A previous injury is the most consistent predictor of the next one. Newer runners are injured more often per hour than established ones. Mostly-easy training with a small dose of hard work. A taper of about two weeks that cuts volume by 41-60% and keeps intensity. Strength training improves running economy. Late collapses are common in recreational marathons: in more than four million race records, 28% of men and 17% of women hit the wall. In 82,303 recreational marathoners, those whose heart rate rose least against their speed late in the race ran faster for their fitness (weather was not accounted for).
+- **Convention: use it, don't oversell it.** The 10% weekly rule (a trial in novices found no benefit over a faster build; jumps above about 30% are the concern). Lighter weeks. One change at a time. The return-from-break percentages. Long-run time caps. Phase proportions. The goal-gap rule of thumb. The thresholds for reading one run: 5% of drift, 2% between halves, the fast-start and fade notes the script prints.
+- **Not supported: avoid.** The ACWR "sweet spot" of 0.8-1.3 and any injury-risk percentage attached to it: it comes from team sports, and in that same runner cohort neither ACWR nor week-to-week change predicted injury the way the model claims. "Strength training cuts running injuries by X%": pooled trials in runners show no clear effect, except in supervised programmes. Claims that polarized beats pyramidal training or the reverse: differences are small and individual. Age-based maximum heart rate formulas treated as fact. A fitness verdict from one training run.
 
 ## Safety
 
@@ -303,3 +334,5 @@ Do less, and say the figures are approximate. Add up the last 6 complete weeks b
 | 40:00 | 1:23:22 | 3:03:27 | 6:12:33 | 9:45-10:39 | 8:14 | 7:37 |
 
 Per mile, multiply by 1.609. When you draft the plan, apply the progression rules by hand to every week.
+
+For feedback on one run, work from the summary and the laps: average pace and heart rate against recent runs of the same kind, rep paces from the laps, and the two halves of a race from its best efforts when they exist. Leave drift and time in zones out.

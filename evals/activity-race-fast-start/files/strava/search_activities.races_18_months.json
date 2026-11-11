@@ -1,0 +1,112 @@
+{
+ "activities": [
+  {
+   "id": "9600000182",
+   "name": "Rose City 10K",
+   "sport_type": "Run",
+   "start_local": "2026-05-31T09:00:02",
+   "description": "Official 52:48. Went out with the 50:00 group and paid for it.",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 10160.1,
+    "moving_time": 3167,
+    "elapsed_time": 3171,
+    "elevation_gain": 66.0,
+    "avg_speed": 3.2081,
+    "max_speed": 4.235,
+    "relative_effort": 169,
+    "total_calories": 671,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000056",
+   "name": "Laurelhurst parkrun",
+   "sport_type": "Run",
+   "start_local": "2026-05-02T09:00:56",
+   "description": "24:40 official. New best!",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 5030.0,
+    "moving_time": 1478,
+    "elapsed_time": 1482,
+    "elevation_gain": 32.7,
+    "avg_speed": 3.4032,
+    "max_speed": 4.492,
+    "relative_effort": 79,
+    "total_calories": 332,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "8690000331",
+   "name": "Bridge 10K",
+   "sport_type": "Run",
+   "start_local": "2025-09-21T09:05:12",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 10090.0,
+    "moving_time": 3225,
+    "elapsed_time": 3230,
+    "elevation_gain": 60.5,
+    "avg_speed": 3.1287,
+    "max_speed": 4.067,
+    "relative_effort": 172,
+    "total_calories": 666,
+    "kudos_count": 3,
+    "achievement_count": 2,
+    "pr_count": 1
+   },
+   "activity_tags": [
+    "Race"
+   ],
+   "description": "53:40"
+  }
+ ],
+ "total_count": 3,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

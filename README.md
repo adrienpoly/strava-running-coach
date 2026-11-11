@@ -2,12 +2,13 @@
 
 A [Claude skill](https://support.claude.com/en/articles/12512180-use-skills-in-claude) that builds, checks and adapts running training plans from the runner's own Strava data.
 
-Claude reads the training log through the Strava connector, cleans it, and hands the arithmetic to a small tested script. Then it does the coaching: a picture of where the runner is, an honest verdict on the goal, a plan that grows out of what they actually do, and check-ins that compare the plan with what Strava shows.
+Claude reads the training log through the Strava connector, cleans it, and hands the arithmetic to a small tested script. Then it does the coaching: a picture of where the runner is, an honest verdict on the goal, a plan that grows out of what they actually do, check-ins that compare the plan with what Strava shows, and feedback on a single run.
 
 ## What it does
 
 - **Plan.** A training plan toward a race (5K to marathon) or a fitness goal, with paces taken from current fitness, not from the goal time.
 - **Check-in.** Planned versus done, read from Strava, and the next weeks adjusted: a missed week, an illness, a session that went too well.
+- **Run feedback.** One run, workout or race, read from its splits, laps and heart rate against the runner's own recent running: was the easy run easy, where the long run faded and why, whether the reps hit their target, how the race was paced.
 - **Read-out.** "How is my training going?", "What paces should I use?", "Is 1:55 realistic?" answered from the data, without forcing a plan on anyone.
 
 It answers in the runner's language and units.
@@ -29,16 +30,17 @@ git clone https://github.com/adrienpoly/strava-running-coach ~/.claude/skills/st
 
 **One file.** [`dist/SKILL.md`](dist/SKILL.md) is the whole skill with the script embedded, for install paths that take a single SKILL.md.
 
-Then ask for what you want: "Build me a plan for a half marathon on 7 March, I'd like to break 1:55", "check-in", "is my easy pace right?".
+Then ask for what you want: "Build me a plan for a half marathon on 7 March, I'd like to break 1:55", "check-in", "is my easy pace right?", "what went wrong in my 10K on Sunday?".
 
 ## How it works
 
 1. **Pull.** Eight read-only connector calls: profile, zones, twelve weeks of runs, the year's longest runs, races, dated best efforts, other sports.
 2. **Clean and classify.** Each run gets a kind (easy, long, workout, race, other) from its tags, name and description. Duplicate uploads, race-day warm-ups and "runs" that are not runs are handled before any number is trusted.
-3. **Compute.** `scripts/runcoach.py` has three subcommands:
+3. **Compute.** `scripts/runcoach.py` has four subcommands:
    - `digest`: weekly table, baseline volume three ways, breaks, run days, the long-run ceiling, typical easy pace, flags.
    - `paces`: VDOT from races and best efforts, equivalent times, training pace ranges, a goal verdict, and a discount after a layoff.
    - `check`: a lint for a drafted plan (volume spikes, the long-run ceiling, taper, calendar dates).
+   - `activity`: one run from its streams and laps: splits, halves and quarters, heart-rate drift, stops, time in zones, repetitions against a target pace.
 4. **Read like a coach.** How long the runner has really been running, whether easy runs are easy (decided by heart rate, not by a pace table), where endurance or speed is the limiter, what else they train.
 5. **Show the picture, ask only what data cannot know.** Goal, availability, niggles, anything untracked.
 6. **Reality-check the goal**, with an A goal, a B goal and a checkpoint.
@@ -68,7 +70,7 @@ It is a coach, not a clinician. It gives a pain rule, sends anything worrying to
 
 ## Evals
 
-Four cases live in [`evals/`](evals/): a marathon plan in miles, a return from a calf injury, a check-in after the flu (all three on synthetic Strava data), and one that needs a live connector. Each offline case was run by a fresh agent with the skill and without it.
+Seven cases live in [`evals/`](evals/). Four cover plans and check-ins: a marathon plan in miles, a return from a calf injury, a check-in after the flu (all three on synthetic Strava data), and one that needs a live connector. Each of the three offline ones was run by a fresh agent with the skill and without it.
 
 | Case | With skill | Without skill |
 |---|---|---|
@@ -77,6 +79,8 @@ Four cases live in [`evals/`](evals/): a marathon plan in miles, a return from a
 | checkin-after-illness | 9/10 | 9/10 |
 
 Read this for what it is: one run per configuration, a capable model on both sides, and a baseline that is already good at this when it has the data. The skill costs about 16% more tokens. What it changed measurably is the rebuild after injury (long run and weekly volume grow in small steps instead of jumps). What it changed less measurably is that paces stay at current fitness until a checkpoint, and that every reply has the same shape. Details and caveats are in [`evals/README.md`](evals/README.md).
+
+The other three cases cover feedback on one run: a long run that fades, intervals started too fast, a 10K paced badly. They are written, and the test suite checks that their data tells the story they rely on, but they have not been run yet, so there are no numbers for that mode.
 
 ## Development
 

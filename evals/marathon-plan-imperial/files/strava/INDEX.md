@@ -22,4 +22,3 @@ Today is Tuesday 2 June 2026.
 | `get_activity_performance.9100000385.json` | `get_activity_performance`, activity_id 9100000385 ("Lakefront Half Marathon", 2026-04-19) |
 
 Nothing else is available offline (no streams, no gear, no other activities' details).
-

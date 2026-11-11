@@ -1,0 +1,40 @@
+{
+ "sport_type": "Run",
+ "has_heartrate": true,
+ "has_device_watts": false,
+ "average_heartrate": 182,
+ "max_heartrate": 190,
+ "calories": 671,
+ "segment_efforts": [],
+ "best_efforts": [
+  {
+   "name": "Fastest5k",
+   "type_value": "Fastest5k",
+   "display_text": "5K",
+   "value": 1491,
+   "unit": "seconds"
+  },
+  {
+   "name": "Fastest10k",
+   "type_value": "Fastest10k",
+   "display_text": "10K",
+   "value": 3124,
+   "unit": "seconds"
+  }
+ ],
+ "laps": [
+  {
+   "elapsed_time": 3171,
+   "moving_time": 3167,
+   "start_index": 0,
+   "end_index": 3166,
+   "distance": 10160.1,
+   "elevation_gain": 50.8,
+   "avg_speed": 3.2081,
+   "max_speed": 3.85,
+   "avg_hr": 182,
+   "max_hr": 190,
+   "avg_grade": 0.01
+  }
+ ]
+}

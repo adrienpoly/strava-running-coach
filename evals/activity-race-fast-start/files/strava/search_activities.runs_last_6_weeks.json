@@ -1,0 +1,783 @@
+{
+ "activities": [
+  {
+   "id": "9600000182",
+   "name": "Rose City 10K",
+   "sport_type": "Run",
+   "start_local": "2026-05-31T09:00:02",
+   "description": "Official 52:48. Went out with the 50:00 group and paid for it.",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 10160.1,
+    "moving_time": 3167,
+    "elapsed_time": 3171,
+    "elevation_gain": 66.0,
+    "avg_speed": 3.2081,
+    "max_speed": 4.235,
+    "relative_effort": 169,
+    "total_calories": 671,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000175",
+   "name": "Warm up",
+   "sport_type": "Run",
+   "start_local": "2026-05-31T08:25:55",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 1900.0,
+    "moving_time": 741,
+    "elapsed_time": 745,
+    "elevation_gain": 12.3,
+    "avg_speed": 2.5641,
+    "max_speed": 3.385,
+    "relative_effort": 11,
+    "total_calories": 125,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000168",
+   "name": "Shakeout",
+   "sport_type": "Run",
+   "start_local": "2026-05-30T09:00:48",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 3200.0,
+    "moving_time": 1229,
+    "elapsed_time": 1233,
+    "elevation_gain": 20.8,
+    "avg_speed": 2.6037,
+    "max_speed": 3.437,
+    "relative_effort": 18,
+    "total_calories": 211,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000161",
+   "name": "3x1k at race pace",
+   "sport_type": "Run",
+   "start_local": "2026-05-28T17:45:41",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6000.0,
+    "moving_time": 2010,
+    "elapsed_time": 2014,
+    "elevation_gain": 39.0,
+    "avg_speed": 2.9851,
+    "max_speed": 3.94,
+    "relative_effort": 57,
+    "total_calories": 396,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 16,
+    "feels_like": 15,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000154",
+   "name": "Morning Run",
+   "sport_type": "Run",
+   "start_local": "2026-05-26T06:30:34",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6400.0,
+    "moving_time": 2381,
+    "elapsed_time": 2385,
+    "elevation_gain": 41.6,
+    "avg_speed": 2.6879,
+    "max_speed": 3.548,
+    "relative_effort": 36,
+    "total_calories": 422,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000147",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-24T08:10:27",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 11300.0,
+    "moving_time": 4339,
+    "elapsed_time": 4343,
+    "elevation_gain": 73.5,
+    "avg_speed": 2.6043,
+    "max_speed": 3.438,
+    "relative_effort": 83,
+    "total_calories": 746,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 15,
+    "feels_like": 14,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000140",
+   "name": "Easy",
+   "sport_type": "Run",
+   "start_local": "2026-05-23T08:40:20",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 4800.0,
+    "moving_time": 1824,
+    "elapsed_time": 1828,
+    "elevation_gain": 31.2,
+    "avg_speed": 2.6316,
+    "max_speed": 3.474,
+    "relative_effort": 27,
+    "total_calories": 317,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000133",
+   "name": "5x1000m",
+   "sport_type": "Run",
+   "start_local": "2026-05-21T17:45:13",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8000.0,
+    "moving_time": 2544,
+    "elapsed_time": 2548,
+    "elevation_gain": 52.0,
+    "avg_speed": 3.1447,
+    "max_speed": 4.151,
+    "relative_effort": 72,
+    "total_calories": 528,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 18,
+    "feels_like": 17,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000126",
+   "name": "Morning Run",
+   "sport_type": "Run",
+   "start_local": "2026-05-19T06:30:06",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6400.0,
+    "moving_time": 2381,
+    "elapsed_time": 2385,
+    "elevation_gain": 41.6,
+    "avg_speed": 2.6879,
+    "max_speed": 3.548,
+    "relative_effort": 36,
+    "total_calories": 422,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000119",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-17T08:10:59",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 12900.0,
+    "moving_time": 4954,
+    "elapsed_time": 4958,
+    "elevation_gain": 83.9,
+    "avg_speed": 2.604,
+    "max_speed": 3.437,
+    "relative_effort": 95,
+    "total_calories": 851,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000112",
+   "name": "Easy",
+   "sport_type": "Run",
+   "start_local": "2026-05-16T08:40:52",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 4800.0,
+    "moving_time": 1824,
+    "elapsed_time": 1828,
+    "elevation_gain": 31.2,
+    "avg_speed": 2.6316,
+    "max_speed": 3.474,
+    "relative_effort": 27,
+    "total_calories": 317,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000105",
+   "name": "Tempo 2x2 miles",
+   "sport_type": "Run",
+   "start_local": "2026-05-14T17:45:45",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8000.0,
+    "moving_time": 2544,
+    "elapsed_time": 2548,
+    "elevation_gain": 52.0,
+    "avg_speed": 3.1447,
+    "max_speed": 4.151,
+    "relative_effort": 72,
+    "total_calories": 528,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 17,
+    "feels_like": 16,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000098",
+   "name": "Morning Run",
+   "sport_type": "Run",
+   "start_local": "2026-05-12T06:30:38",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6400.0,
+    "moving_time": 2381,
+    "elapsed_time": 2385,
+    "elevation_gain": 41.6,
+    "avg_speed": 2.6879,
+    "max_speed": 3.548,
+    "relative_effort": 36,
+    "total_calories": 422,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000091",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-10T08:10:31",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 12100.0,
+    "moving_time": 4646,
+    "elapsed_time": 4650,
+    "elevation_gain": 78.6,
+    "avg_speed": 2.6044,
+    "max_speed": 3.438,
+    "relative_effort": 89,
+    "total_calories": 799,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 13,
+    "feels_like": 12,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000084",
+   "name": "Easy",
+   "sport_type": "Run",
+   "start_local": "2026-05-09T08:40:24",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 4800.0,
+    "moving_time": 1824,
+    "elapsed_time": 1828,
+    "elevation_gain": 31.2,
+    "avg_speed": 2.6316,
+    "max_speed": 3.474,
+    "relative_effort": 27,
+    "total_calories": 317,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000077",
+   "name": "6x800m",
+   "sport_type": "Run",
+   "start_local": "2026-05-07T17:45:17",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8000.0,
+    "moving_time": 2544,
+    "elapsed_time": 2548,
+    "elevation_gain": 52.0,
+    "avg_speed": 3.1447,
+    "max_speed": 4.151,
+    "relative_effort": 72,
+    "total_calories": 528,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Clear",
+    "wind_direction": "W",
+    "temperature": 16,
+    "feels_like": 15,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000070",
+   "name": "Morning Run",
+   "sport_type": "Run",
+   "start_local": "2026-05-05T06:30:10",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6400.0,
+    "moving_time": 2381,
+    "elapsed_time": 2385,
+    "elevation_gain": 41.6,
+    "avg_speed": 2.6879,
+    "max_speed": 3.548,
+    "relative_effort": 36,
+    "total_calories": 422,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000063",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-05-03T08:10:03",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 9700.0,
+    "moving_time": 3725,
+    "elapsed_time": 3729,
+    "elevation_gain": 63.0,
+    "avg_speed": 2.604,
+    "max_speed": 3.437,
+    "relative_effort": 71,
+    "total_calories": 640,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 12,
+    "feels_like": 11,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000056",
+   "name": "Laurelhurst parkrun",
+   "sport_type": "Run",
+   "start_local": "2026-05-02T09:00:56",
+   "description": "24:40 official. New best!",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "activity_tags": [
+    "Race"
+   ],
+   "summary": {
+    "distance": 5030.0,
+    "moving_time": 1478,
+    "elapsed_time": 1482,
+    "elevation_gain": 32.7,
+    "avg_speed": 3.4032,
+    "max_speed": 4.492,
+    "relative_effort": 79,
+    "total_calories": 332,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000049",
+   "name": "Warm up",
+   "sport_type": "Run",
+   "start_local": "2026-05-02T08:35:49",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 1600.0,
+    "moving_time": 608,
+    "elapsed_time": 612,
+    "elevation_gain": 10.4,
+    "avg_speed": 2.6316,
+    "max_speed": 3.474,
+    "relative_effort": 9,
+    "total_calories": 106,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 9,
+    "feels_like": 8,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000042",
+   "name": "Tempo 3 miles",
+   "sport_type": "Run",
+   "start_local": "2026-04-30T17:45:42",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8000.0,
+    "moving_time": 2544,
+    "elapsed_time": 2548,
+    "elevation_gain": 52.0,
+    "avg_speed": 3.1447,
+    "max_speed": 4.151,
+    "relative_effort": 72,
+    "total_calories": 528,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 15,
+    "feels_like": 14,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000035",
+   "name": "Morning Run",
+   "sport_type": "Run",
+   "start_local": "2026-04-28T06:30:35",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6400.0,
+    "moving_time": 2381,
+    "elapsed_time": 2385,
+    "elevation_gain": 41.6,
+    "avg_speed": 2.6879,
+    "max_speed": 3.548,
+    "relative_effort": 36,
+    "total_calories": 422,
+    "kudos_count": 0,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 9,
+    "feels_like": 8,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000028",
+   "name": "Long run",
+   "sport_type": "Run",
+   "start_local": "2026-04-26T08:10:28",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 11300.0,
+    "moving_time": 4339,
+    "elapsed_time": 4343,
+    "elevation_gain": 73.5,
+    "avg_speed": 2.6043,
+    "max_speed": 3.438,
+    "relative_effort": 83,
+    "total_calories": 746,
+    "kudos_count": 3,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 11,
+    "feels_like": 10,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000021",
+   "name": "Easy",
+   "sport_type": "Run",
+   "start_local": "2026-04-25T08:40:21",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 4800.0,
+    "moving_time": 1824,
+    "elapsed_time": 1828,
+    "elevation_gain": 31.2,
+    "avg_speed": 2.6316,
+    "max_speed": 3.474,
+    "relative_effort": 27,
+    "total_calories": 317,
+    "kudos_count": 1,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 10,
+    "feels_like": 9,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000014",
+   "name": "4x1 mile at 10K effort",
+   "sport_type": "Run",
+   "start_local": "2026-04-23T17:45:14",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 8000.0,
+    "moving_time": 2544,
+    "elapsed_time": 2548,
+    "elevation_gain": 52.0,
+    "avg_speed": 3.1447,
+    "max_speed": 4.151,
+    "relative_effort": 72,
+    "total_calories": 528,
+    "kudos_count": 4,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 14,
+    "feels_like": 13,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  },
+  {
+   "id": "9600000007",
+   "name": "Morning Run",
+   "sport_type": "Run",
+   "start_local": "2026-04-21T06:30:07",
+   "location_summary": "Portland, Oregon",
+   "is_trainer": false,
+   "summary": {
+    "distance": 6400.0,
+    "moving_time": 2381,
+    "elapsed_time": 2385,
+    "elevation_gain": 41.6,
+    "avg_speed": 2.6879,
+    "max_speed": 3.548,
+    "relative_effort": 36,
+    "total_calories": 422,
+    "kudos_count": 2,
+    "achievement_count": 0,
+    "pr_count": 0
+   },
+   "weather": {
+    "condition": "Cloudy",
+    "wind_direction": "W",
+    "temperature": 8,
+    "feels_like": 7,
+    "wind_speed": 2.8,
+    "humidity": 68
+   }
+  }
+ ],
+ "total_count": 26,
+ "offset": 0,
+ "has_next_page": false,
+ "value_units": {
+  "avg_speed": "meters/second",
+  "distance": "meters",
+  "elapsed_time": "seconds",
+  "elevation_gain": "meters",
+  "max_speed": "meters/second",
+  "moving_time": "seconds",
+  "relative_effort": "unitless",
+  "total_calories": "kilocalories",
+  "weather.feels_like": "celsius",
+  "weather.humidity": "percent",
+  "weather.temperature": "celsius",
+  "weather.wind_speed": "meters/second"
+ }
+}

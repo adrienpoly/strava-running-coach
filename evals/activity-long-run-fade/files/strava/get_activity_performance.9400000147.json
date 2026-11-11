@@ -1,0 +1,25 @@
+{
+ "sport_type": "Run",
+ "has_heartrate": true,
+ "has_device_watts": false,
+ "average_heartrate": 141,
+ "max_heartrate": 150,
+ "calories": 462,
+ "segment_efforts": [],
+ "best_efforts": [],
+ "laps": [
+  {
+   "elapsed_time": 2590,
+   "moving_time": 2590,
+   "start_index": 0,
+   "end_index": 2589,
+   "distance": 7000.0,
+   "elevation_gain": 35.0,
+   "avg_speed": 2.7027,
+   "max_speed": 3.243,
+   "avg_hr": 141,
+   "max_hr": 147,
+   "avg_grade": 0.01
+  }
+ ]
+}

@@ -8,12 +8,15 @@ Each folder is one test case in the layout `claude plugin eval` reads: `prompt.m
 | `return-from-break-10k` | A runner back from five weeks off with a calf injury, asking in French for a time they could run before the break. |
 | `checkin-after-illness` | A check-in: two plan weeks done, one lost to the flu, a first run back with a raised heart rate. |
 | `live-strava-half-plan` | Needs a real Strava connector, so it has no fixtures and is not part of the offline numbers. |
+| `activity-long-run-fade` | Feedback on one long run: 30% longer than anything in the previous month, started too fast, on a warm day, without fuel, with a stop and a fade. |
+| `activity-intervals-too-fast` | Feedback in French on 6 x 1000 m with programmed laps: two reps far too fast, then slower every rep, although the average pace matches the target. |
+| `activity-race-fast-start` | Feedback in miles on a 10K: first mile faster than 5K race pace, a second half 9% slower, a GPS distance that reads long. |
 
-The Strava data is synthetic and the runners are invented. `tools/make_fixtures.py` generates it in the shape the connector returns; the test suite checks that the committed files match the generator. "Today" is Tuesday 2 June 2026 in every offline case.
+The Strava data is synthetic and the runners are invented. `tools/make_fixtures.py` generates it in the shape the connector returns; the test suite checks that the committed files match the generator. The three `activity-*` cases also carry the streams of the run in question, simulated second by second and sampled the way the connector samples them. "Today" is Tuesday 2 June 2026 in every offline case.
 
 ## Results
 
-Fresh agents, one run per configuration, graded by hand against the statements in `graders/`.
+Fresh agents, one run per configuration, graded by hand against the statements in `graders/`. The three `activity-*` cases were added with the activity feedback mode and have not been run: the table has no row for them.
 
 | Case | With skill | Without skill |
 |---|---|---|

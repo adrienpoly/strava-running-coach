@@ -4,12 +4,14 @@
 The runners are invented. The JSON mirrors the shape of the Strava connector's
 responses (raw SI units), including the mess real logs contain: duplicate
 uploads, split outings, paused runs, GPS-long race distances, stale zones.
+Three cases also carry the streams of one run, simulated second by second.
 
     python3 tools/make_fixtures.py          # rewrites evals/*/files/strava/
 
 Everything is deterministic: "today" for all cases is Tuesday 2 June 2026.
 """
 import json
+import math
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
@@ -26,7 +28,7 @@ class Log:
     """One runner's activity log, plus the per-activity detail we choose to expose."""
 
     def __init__(self, first_id, city):
-        self.next_id, self.city, self.acts, self.perf = first_id, city, [], {}
+        self.next_id, self.city, self.acts, self.perf, self.streams = first_id, city, [], {}, {}
 
     def add(self, day, clock, km, pace, name, kind="easy", *, sport="Run", desc=None, tags=None, elev=None,
             pause=0, trainer=False, manual=False, hr=None, laps=None, temp=14, moving=None, bests=None):
@@ -106,7 +108,10 @@ def zones(max_hr, sample_type, sample_time, speeds):
             "sample_race_pace": {"best_effort_type": sample_type, "time": sample_time, "is_estimated": False}}
 
 
-def write(case, files, notes):
+NO_DETAIL = "Nothing else is available offline (no streams, no gear, no other activities' details)."
+
+
+def write(case, files, notes, nothing=NO_DETAIL):
     out = ROOT / case / "files" / "strava"
     out.mkdir(parents=True, exist_ok=True)
     for old in out.glob("*"):
@@ -118,7 +123,7 @@ def write(case, files, notes):
     for name, (call, payload) in files.items():
         (out / name).write_text(json.dumps(payload, indent=1, ensure_ascii=False) + "\n")
         lines.append(f"| `{name}` | {call} |")
-    lines += ["", "Nothing else is available offline (no streams, no gear, no other activities' details).", ""] + notes
+    lines += ["", nothing] + ([""] + notes if notes else [])
     (out / "INDEX.md").write_text("\n".join(lines) + "\n")
     print(f"{case}: {len(files) + 1} files")
 
@@ -333,5 +338,196 @@ def lena():
     write("checkin-after-illness", files, ["The plan being followed is in `plan.md`, next to this folder."])
 
 
+# ---------------------------------------------------------------------------------------------------------
+# Single-activity cases: one run with its streams, plus six weeks of context.
+def simulate(segments, resolution):
+    """Run a session second by second and sample it the way the connector does (points evenly spaced by distance).
+
+    segments: (metres, pace in s/km, HR at the start, HR at the end) for running, ("stop", seconds) for standing.
+    Heart rate follows its target with a 40-second lag. Returns the streams payload and the figures the
+    activity summary needs, so that summary, laps and streams tell the same story.
+    """
+    T, D, hr = 0.0, 0.0, segments[0][2] - 25
+    alt = lambda m: round(12 + 5 * math.sin(m / 1900) + 3 * math.sin(m / 530), 1)
+    rows, laps, stopped = [(0.0, 0.0, hr)], [], 0
+    for seg in segments:
+        if seg[0] == "stop":
+            for _ in range(seg[1]):
+                T += 1
+                hr += (112 - hr) / 40
+                rows.append((T, D, hr))
+            stopped += seg[1]
+            continue
+        metres, pace, h0, h1 = seg
+        start, t0, area, v = D, T, 0.0, 1000 / pace
+        while D < start + metres - 1e-6:
+            dt = min(1.0, (start + metres - D) / v)
+            D, T = D + v * dt, T + dt
+            hr += (h0 + (h1 - h0) * (D - start) / metres - hr) * dt / 40
+            area += hr * dt
+            rows.append((T, D, hr))
+        laps.append((metres, round(T - t0), round(area / (T - t0))))
+    out, i = {"heart_rate": [], "distance": [], "altitude": [], "time": []}, 0
+    for k in range(resolution):
+        while rows[i][1] < D * k / (resolution - 1) - 1e-6:
+            i += 1
+        t, d, h = rows[i]
+        out["heart_rate"].append(round(h + 1.2 * math.sin(t / 29)))
+        out["distance"].append(round(d, 1))
+        out["altitude"].append(alt(d))
+        out["time"].append(round(t))
+    mean = sum((b[0] - a[0]) * b[2] for a, b in zip(rows, rows[1:])) / T
+    return {"streams": out, "km": D / 1000, "elapsed": round(T), "stopped": stopped, "laps": laps,
+            "hr": (round(mean), round(max(r[2] for r in rows)) + 1)}
+
+
+def add_simulated(g, d, clock, name, kind, sim, resolution, programmed=False, **kw):
+    aid = g.add(d, clock, sim["km"], 0, name, kind, moving=sim["elapsed"] - 4 - sim["stopped"], pause=sim["stopped"],
+                hr=sim["hr"], laps=sim["laps"] if programmed else None, **kw)
+    g.streams[aid] = (resolution, sim["streams"])
+    if not programmed:                                       # one lap for the whole run, pauses included
+        g.perf[aid]["laps"][0].update(elapsed_time=sim["elapsed"], max_hr=sim["hr"][1])
+    return aid
+
+
+def feedback_files(log, profile, zone, efforts):
+    files = {
+        "get_athlete_profile.json": ("`get_athlete_profile`", profile),
+        "get_athlete_zones.json": ("`get_athlete_zones`", zone),
+        "search_activities.runs_last_6_weeks.json": (
+            f"`search_activities`, {RUN_TYPES}, start_date_min 2026-04-21, include_tags true, first 60",
+            log.search(lambda a: is_run(a) and a["start_local"][:10] >= "2026-04-21")),
+        "search_activities.races_18_months.json": (
+            f'`search_activities`, {RUN_TYPES}, tags ["RACE"], start_date_min 2024-12-02, include_tags true, first 20',
+            log.search(lambda a: is_run(a) and "Race" in a.get("activity_tags", []))),
+        "get_athlete_best_efforts.json": (
+            '`get_athlete_best_efforts`, sports ["Run"], years [2026, 2025], best_effort_types '
+            '["Fastest5k","Fastest10k","FastestHalfMarathon","FastestMarathon"]',
+            {"sports": ["Run"], "all_time": False, "efforts": efforts}),
+    }
+    for aid, payload in log.perf.items():
+        act = next(a for a in log.acts if a["id"] == aid)
+        files[f"get_activity_performance.{aid}.json"] = (
+            f'`get_activity_performance`, activity_id {aid} ("{act["name"]}", {act["start_local"][:10]})', payload)
+    for aid, (resolution, payload) in log.streams.items():
+        act = next(a for a in log.acts if a["id"] == aid)
+        files[f"get_activity_streams.{aid}.json"] = (
+            f'`get_activity_streams`, activity_id {aid} ("{act["name"]}", {act["start_local"][:10]}), streams '
+            f'["time","distance","heart_rate","altitude"], resolution {resolution}', payload)
+    return files
+
+
+ONE_STREAM = ("Nothing else is available offline: streams exist for that one activity only, at that resolution, "
+              "and there are no other activities' details and no gear.")
+
+
+def nora():
+    """A long run that jumped from 16 to 21 km on a warm day: fast start, no fuel, a stop, a fade."""
+    g = Log(9400000000, "Bristol, England")
+    easy = 370
+    longs = [(14.0, None, 12), (15.0, None, 13), (16.0, None, 15), (16.2, (147, 157), 14), (15.0, (146, 155), 16)]
+    names = ["Tempo 20min", "Fartlek 8x1min", "Hills x8", "Tempo 2x12min", "Fartlek 10x1min", "Tempo 25min"]
+    for i in range(6):                                       # weeks of 20 April to 25 May
+        w = i + 6
+        g.add(day(w, 1), "06:55", 7.0, easy, "Morning run", hr=(141, 150) if i == 5 else None, temp=9 + i)
+        g.add(day(w, 3), "18:20", 8.5, 340, names[i], "workout", temp=12 + i)
+        g.add(day(w, 5), "08:40", 6.0, easy + 5, "Easy", temp=11 + i)
+        if i < 5:
+            km, hr, temp = longs[i]
+            g.add(day(w, 6), "08:30", km, 365, "Sunday long run", "long", hr=hr, temp=temp,
+                  tags=["LongRun"] if i % 2 else None)
+    sim = simulate([(7000, 345, 152, 160), (6000, 352, 160, 166), (3000, 368, 166, 168), (1000, 395, 168, 169),
+                    ("stop", 90), (2000, 410, 167, 170), (2100, 425, 170, 171)], 200)
+    add_simulated(g, "2026-05-31", "08:35", "Half marathon distance!", "long", sim, 200, temp=24,
+                  desc="Wanted to see if I could cover the distance. Wheels came off around 16k, had to stop. "
+                       "Forgot my gels.")
+    g.acts.append(old_run("2026-03-22", 10.04, 3040, "Spring 10K", g.city, "9390000117", ["Race"], "50:40 chip time"))
+    efforts = [effort("Fastest5k", 1492, "2026-03-22", "9390000117"), effort("Fastest10k", 3031, "2026-03-22", "9390000117"),
+               effort("FastestHalfMarathon", 7827, "2026-05-31", str(g.next_id))]
+    profile = {"id": 94000001, "first_name": "Nora", "last_name": "Example", "measurement_preference": "Metric", "gender": "Woman",
+               "weight": 60, "weight_display": "60.0 kg", "location": {"city": "Bristol", "state": "", "country": "United Kingdom"},
+               "current_focus": {"id": "5400001", "focus_type": "TrainForEvent", "open_text": "First half marathon in September",
+                                 "expires_at_local": "2026-09-13T23:59:59"}}
+    zone = zones(186, "Fastest10k", "50m 40s", [2.55, 2.94, 3.27, 3.49, 3.71])
+    write("activity-long-run-fade", feedback_files(g, profile, zone, efforts), [], ONE_STREAM)
+
+
+def hugo():
+    """6 x 1000 m meant for 4:20/km: two reps far too fast, then slower every rep with longer recoveries."""
+    g = Log(9500000000, "Nantes, France")
+    easy = 355
+    names = ["Seuil 3x8min", "8x400m", "Seuil 20min", "6x800m", "Seuil 2x12min"]
+    for i in range(6):                                       # weeks of 20 April to 25 May
+        w = i + 6
+        g.add(day(w, 1), "07:05", 8.0, easy, "Footing", hr=(142, 151) if i == 5 else None, temp=10 + i)
+        if i < 5:
+            g.add(day(w, 3), "18:40", 9.5, 322, names[i], "workout", tags=["Workout"] if i % 2 else None, temp=13 + i)
+        g.add(day(w, 5), "09:10", 7.0, easy + 6, "Footing du samedi", temp=11 + i)
+        g.add(day(w, 6), "09:00", [13.0, 14.0, 13.5, 15.0, 14.2, 14.0][i], 360, "Sortie longue", "long", temp=12 + i)
+    reps = [(245, 176), (248, 180), (257, 182), (266, 183), (275, 183), (284, 182)]
+    rest = [(150, 136), (155, 140), (170, 145), (190, 148), (210, 150)]
+    segs = [(2000, 360, 132, 142)]
+    for i, (s, h) in enumerate(reps):
+        segs.append((1000, s, h, h + 2))
+        if i < 5:
+            segs.append((400, rest[i][0] / 0.4, rest[i][1], rest[i][1] - 4))
+    segs.append((1500, 380, 150, 144))
+    sim = simulate(segs, 200)
+    add_simulated(g, "2026-05-28", "18:35", "6x1000m", "workout", sim, 200, programmed=True, tags=["Workout"], temp=18,
+                  desc="Objectif 4:20. Parti trop vite ? Fini à l'agonie.")
+    g.acts.append(old_run("2026-04-19", 10.07, 2798, "10 km de Nantes", g.city, "9490000230", ["Race"], "46:40 officiel"))
+    g.acts.append(old_run("2025-10-12", 10.05, 2885, "10 km d'automne", g.city, "8790000412", ["Race"], "48:05"))
+    efforts = [effort("Fastest5k", 1372, "2026-04-19", "9490000230"), effort("Fastest10k", 2779, "2026-04-19", "9490000230"),
+               effort("Fastest10k", 2871, "2025-10-12", "8790000412")]
+    profile = {"id": 95000001, "first_name": "Hugo", "last_name": "Exemple", "measurement_preference": "Metric", "gender": "Man",
+               "weight": 71, "weight_display": "71.0 kg", "location": {"city": "Nantes", "state": "", "country": "France"}}
+    zone = zones(188, "Fastest10k", "46m 40s", [2.78, 3.2, 3.55, 3.79, 4.03])
+    write("activity-intervals-too-fast", feedback_files(g, profile, zone, efforts), [], ONE_STREAM)
+
+
+def sam():
+    """A 10K raced in miles: first mile faster than 5K race pace, then slower every mile; GPS reads long."""
+    g = Log(9600000000, "Portland, Oregon")
+    easy, mile = 372, 1609.344
+    names = ["4x1 mile at 10K effort", "Tempo 3 miles", "6x800m", "Tempo 2x2 miles", "5x1000m"]
+    for i in range(6):                                       # weeks of 20 April to 25 May
+        w = i + 6
+        g.add(day(w, 1), "06:30", 6.4, easy, "Morning Run", hr=(143, 152) if i == 4 else None, temp=8 + i)
+        if i < 5:
+            g.add(day(w, 3), "17:45", 8.0, 318, names[i], "workout", temp=14 + i)
+        else:
+            g.add(day(w, 3), "17:45", 6.0, 335, "3x1k at race pace", "workout", temp=16)
+        if i == 1:                                           # Saturday 2 May: parkrun instead of the easy run
+            g.add(day(w, 5), "08:35", 1.6, 380, "Warm up", temp=9)
+            park = g.add(day(w, 5), "09:00", 5.03, 0, "Laurelhurst parkrun", "race", tags=["Race"], moving=1478,
+                         desc="24:40 official. New best!", hr=(181, 190), temp=10)
+        elif i < 5:
+            g.add(day(w, 5), "08:40", 4.8, easy + 8, "Easy", temp=10 + i)
+        else:
+            g.add(day(w, 5), "09:00", 3.2, easy + 12, "Shakeout", temp=13)
+        if i < 5:
+            g.add(day(w, 6), "08:10", [11.3, 9.7, 12.1, 12.9, 11.3][i], 384, "Long run", "long", temp=11 + i)
+    g.add("2026-05-31", "08:25", 1.9, 390, "Warm up", temp=11)
+    per_mile = [(460, 150, 178), (478, 178, 184), (497, 184, 186), (522, 186, 187), (534, 187, 187), (530, 187, 188)]
+    segs = [(mile, s / 1.609344, h0, h1) for s, h0, h1 in per_mile] + [(504, 480 / 1.609344, 188, 190)]
+    sim = simulate(segs, 150)
+    race = add_simulated(g, "2026-05-31", "09:00", "Rose City 10K", "race", sim, 150, tags=["Race"], temp=12,
+                         desc="Official 52:48. Went out with the 50:00 group and paid for it.",
+                         bests=[{"name": "Fastest5k", "type_value": "Fastest5k", "display_text": "5K", "value": 1491, "unit": "seconds"},
+                                {"name": "Fastest10k", "type_value": "Fastest10k", "display_text": "10K", "value": 3124, "unit": "seconds"}])
+    g.acts.append(old_run("2025-09-21", 10.09, 3225, "Bridge 10K", g.city, "8690000331", ["Race"], "53:40"))
+    efforts = [effort("Fastest5k", 1471, day(7, 5), park), effort("Fastest5k", 1491, "2026-05-31", race),
+               effort("Fastest10k", 3124, "2026-05-31", race), effort("Fastest10k", 3215, "2025-09-21", "8690000331")]
+    profile = {"id": 96000001, "first_name": "Sam", "last_name": "Example", "measurement_preference": "Imperial", "gender": "Man",
+               "weight": 78, "weight_display": "172.0 lb", "location": {"city": "Portland", "state": "Oregon", "country": "USA"},
+               "current_focus": {"id": "5600001", "focus_type": "TrainForEvent", "open_text": "Sub-50 10K",
+                                 "expires_at_local": "2026-05-31T23:59:59"}}
+    zone = zones(192, "Fastest5k", "24m 40s", [2.55, 2.94, 3.27, 3.49, 3.71])
+    write("activity-race-fast-start", feedback_files(g, profile, zone, efforts), [], ONE_STREAM)
+
+
+RUNNERS = (maya, tom, lena, nora, hugo, sam)
+
 if __name__ == "__main__":
-    maya(), tom(), lena()
+    for runner in RUNNERS:
+        runner()

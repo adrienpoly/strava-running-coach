@@ -1,0 +1,20 @@
+{
+ "id": 96000001,
+ "first_name": "Sam",
+ "last_name": "Example",
+ "measurement_preference": "Imperial",
+ "gender": "Man",
+ "weight": 78,
+ "weight_display": "172.0 lb",
+ "location": {
+  "city": "Portland",
+  "state": "Oregon",
+  "country": "USA"
+ },
+ "current_focus": {
+  "id": "5600001",
+  "focus_type": "TrainForEvent",
+  "open_text": "Sub-50 10K",
+  "expires_at_local": "2026-05-31T23:59:59"
+ }
+}

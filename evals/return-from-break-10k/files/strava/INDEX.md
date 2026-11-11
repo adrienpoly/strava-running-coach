@@ -21,4 +21,3 @@ Today is Tuesday 2 June 2026.
 | `get_activity_performance.9200000196.json` | `get_activity_performance`, activity_id 9200000196 ("Footing du dimanche", 2026-05-31) |
 
 Nothing else is available offline (no streams, no gear, no other activities' details).
-

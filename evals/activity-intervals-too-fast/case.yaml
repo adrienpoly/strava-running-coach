@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: activity-intervals-too-fast
+expected_outcome: |
+  Short feedback in French on the 6 x 1000 m of Thursday 28 May 2026: the first two reps were 12 to 15 seconds per km
+  faster than the 4:20 target, every rep after that was slower than the one before, and the recoveries stretched from
+  2:30 to 3:30. The reply confirms from his recent 10 km race that 4:20-4:27 is the right pace, says the session did not
+  deliver what it was meant to, and gives a concrete way to run it next time, without changing his targets.
+context:
+  scaffold_script: place-files.sh
